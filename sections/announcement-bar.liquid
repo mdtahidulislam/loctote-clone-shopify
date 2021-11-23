@@ -1,0 +1,18 @@
+<section class="annocement">
+    <div class="container">
+        <p>{{ section.settings.text}}</p>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "Annoucement Bar",
+    "settings": [
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Announcement",
+            "default": "Free shipping on all LOCTOTE orders over $75"
+        }
+    ]
+}
+{% endschema %}
