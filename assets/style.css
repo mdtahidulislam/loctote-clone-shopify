@@ -14,18 +14,16 @@ body {
     padding: 0 15px;
 }
 
-:root {
+/* :root {
     --golden-text: #d8b764;
     --announcement-bg: #333333;
-}
+} */
 .text-center {
     text-align: center;
 }
 
 /* ANNOUNCEMENT BAR CSS */
 .annocement {
-    background-color: var(--announcement-bg);
-    color: var(--golden-text);
     padding: 10px 0;
     font-size: 14px;
     letter-spacing: 1px;
