@@ -1,6 +1,6 @@
 <section class="annocement">
     <div class="container">
-        <p class="text-center">{{ section.settings.text}}</p>
+        <p class="text-center">{{ section.settings.text }}</p>
     </div>
 </section>
 {% schema %}
@@ -12,6 +12,12 @@
             "id": "text",
             "label": "Announcement",
             "default": "Free shipping on all LOCTOTE orders over $75"
+        },
+        {
+            "type": "color",
+            "id": "bg-color",
+            "label": "Background Color",
+            "default": "#333333"
         }
     ]
 }

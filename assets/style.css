@@ -16,7 +16,7 @@ body {
 
 :root {
     --golden-text: #d8b764;
-    --announcement-bg: #333333;
+    --announcement-bg: {{ section.settings.bg-color }};
 }
 .text-center {
     text-align: center;
