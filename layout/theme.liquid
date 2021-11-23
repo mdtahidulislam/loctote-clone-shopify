@@ -10,6 +10,13 @@
 
     <!-- add favicon -->
 
+    <!-- add google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- add stylesheet -->
+    {{ 'style.css' | asset_url | stylesheet_tag }}
 
     <title>{{ page_title }}</title>
 
@@ -21,7 +28,7 @@
     {% section 'announcement-bar' %}
     <main>
         <!-- dynamically output from all template  -->
-        {{content_for_layout}}
+        {{ content_for_layout }}
     </main>
 </body>
 </html>
