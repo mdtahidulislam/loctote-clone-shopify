@@ -1,4 +1,4 @@
-<header class="header">
+<header id="header" class="header">
     <div class="container">
         <div class="header-row d-flex flex-wrap justify-content-between align-items-center">
             <div class="header-item header-item--nav">
@@ -20,6 +20,9 @@
             <div class="header-item header-item--logo">
                 <a href="#">
                     {% if section.settings.logo != blank %}
+                        <!-- {% if section.settings.sticky_header == false %}
+                            
+                        {% endif %} -->
                         <img src="{{ section.settings.logo | img_url: 'medium' }}" alt="LOGO">
                     {% else %}
                     <h1>{{ shop.name }}</h1>
@@ -42,6 +45,20 @@
         </div>
     </div>
 </header>
+
+<script>    
+    const header = document.querySelector('#header');
+    const stickyValue = `{{ section.settings.sticky_header }}`;
+    window.onscroll = () => {
+        if (window.pageYOffset > 140 && stickyValue == 'true') {
+            header.classList.add('header--sticky', 'is-bg');
+        } else {
+            header.classList.remove('header--sticky', 'is-bg');
+        }
+    }
+</script>
+
+
 {% schema %}
 {
     "name": "Header",
@@ -50,7 +67,14 @@
             "type": "image_picker",
             "id": "logo",
             "label": "Set Logo"
+        },
+        {
+            "type": "checkbox",
+            "id": "sticky_header",
+            "label": "Set Sticky Header",
+            "default": false
         }
     ]
 }
 {% endschema %}
+

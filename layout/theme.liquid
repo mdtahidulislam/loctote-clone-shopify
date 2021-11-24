@@ -31,5 +31,8 @@
         <!-- dynamically output from all template  -->
         {{ content_for_layout }}
     </main>
+
+    <!-- add js -->
+    {{ 'main.js'| asset_url | script_tag }}
 </body>
 </html>

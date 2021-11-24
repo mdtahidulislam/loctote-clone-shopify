@@ -47,6 +47,10 @@ a {
     vertical-align: middle;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .justify-content-center {
     justify-content: center;
 }
@@ -82,7 +86,10 @@ a {
 
 /* HEADER CSS */
 .header {
-    background-color: #000;
+    padding: 20px 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
 }
 
 .header-item--nav, 
@@ -102,9 +109,27 @@ a {
     height: 30px;
 }
 
+/* sticky header */
+.header--sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #f3f0eb;
+    padding: 15px 0;
+}
+
+header.is-bg a {
+    color: #000;
+}
+
+header.is-bg svg.icon path {
+    stroke: #000;
+}
+
+
 /* VIDEO AREA CSS */
 .video-area {
-    height: 600px;
+    height: 700px;
 }
 
 .video-wrapper {
