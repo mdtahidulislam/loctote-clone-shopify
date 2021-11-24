@@ -19,7 +19,7 @@
             </div>
             <div class="header-item header-item--logo">
                 <a href="#">
-                    <img src="../assets/logo-white.png" alt="LOGO">
+                    <img src="{{ section.settings.logo | img_url: 'medium' }}" alt="LOGO">
                 </a>
             </div>
             <div class="header-item header-item--icon">
@@ -42,7 +42,10 @@
 {
     "name": "Header",
     "settings": [
-        
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Set Logo",
+        "default": "https://cdn.shopify.com/s/files/1/0602/6018/8342/files/logo-white.png?v=1637760765"
     ]
 }
 {% endschema %}
