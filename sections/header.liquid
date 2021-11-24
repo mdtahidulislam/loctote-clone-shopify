@@ -1,0 +1,48 @@
+<header class="header">
+    <div class="container">
+        <div class="header-row d-flex flex-wrap justify-content-between align-items-center">
+            <div class="header-item header-item--nav">
+                <ul class="site-nav d-flex flex-wrap">
+                    <li class="site-nav__item">
+                        <a href="#" class="site-nav__link">HOME</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="#" class="site-nav__link">SHOP</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="#" class="site-nav__link">ABOUT</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="#" class="site-nav__link">STORIES</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-item header-item--logo">
+                <a href="#">
+                    <img src="../assets/images/LOCTOTE_LOGO_FULL_W_180x.png" alt="LOGO">
+                </a>
+            </div>
+            <div class="header-item header-item--icon">
+                <div class="site-nav d-flex flex-wrap justify-content-end">
+                    <a href="#" class="site-nav__link site-nav__link--size">
+                        {% include 'icon-man' %}
+                    </a>
+                    <a href="#" class="site-nav__link site-nav__link--size">
+                        {% include 'icon-search' %}
+                    </a>
+                    <a href="#" class="site-nav__link site-nav__link--size">
+                        {% include 'icon-cart' %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+        
+    ]
+}
+{% endschema %}

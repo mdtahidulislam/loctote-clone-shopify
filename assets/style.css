@@ -29,6 +29,28 @@ body {
     letter-spacing: 1px;
 }
 
+/* HEADER CSS */
+.header {
+    background-color: #000;
+}
+
+.header-item--nav, 
+.header-item--icon {
+    flex: 1 1 0;
+}
+
+.site-nav__link {
+    font-size: 20px;
+    color: #fff;
+    padding: 7px 10px;
+    display: inline-block;
+}
+
+.site-nav__link--size {
+    width: 30px;
+    height: 30px;
+}
+
 /* VIDEO AREA CSS */
 .video-area {
     height: 600px;
