@@ -1,12 +1,12 @@
 {
   "sections": {
-    "helloworld": {
-      "type": "hello",
+    "video": {
+      "type": "video",
       "settings": {
       }
     }
   },
   "order": [
-    "helloworld"
+    "video"
   ]
 }
