@@ -22,10 +22,16 @@ a {
     text-decoration: none;
 }
 
-/* :root {
-    --golden-text: #d8b764;
-    --announcement-bg: #333333;
-} */
+:root {
+    /* --golden-text: #d8b764;
+    --announcement-bg: #333333; */
+    --site-bg: #f3f0eb;
+    --icon-hover: rgba(189, 97, 78, 1);
+    --menu-hover: rgba(189, 97, 78, 1);
+    --dropdown-bg: #f3f0eb;
+    --dropdown-menu-bg: #eadbd4;
+    --border: #878787;
+}
 
 /* UTILITIES */
 .d-flex {
@@ -45,6 +51,10 @@ a {
 .d-table-cell {
     display: table-cell;
     vertical-align: middle;
+}
+
+.d-none {
+    display: none;
 }
 
 .flex-wrap {
@@ -77,6 +87,20 @@ a {
     background-repeat: no-repeat;
 }
 
+.site-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    background: rgba(189, 97, 78, 1);
+}
+
+.site-btn:hover {
+    background: rgba(216, 183, 100, 1);
+}
+
 /* ANNOUNCEMENT BAR CSS */
 .annocement {
     padding: 10px 0;
@@ -97,16 +121,28 @@ a {
     flex: 1 1 0;
 }
 
+.site-nav__item {
+    position: relative;
+}
+
 .site-nav__link {
-    font-size: 20px;
+    font-size: 13px;
     color: #fff;
     padding: 7px 10px;
     display: inline-block;
 }
 
 .site-nav__link--size {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+.site-nav__link:hover {
+    color: var(--menu-hover);
+}
+
+svg.icon:hover path {
+    stroke: var(--icon-hover);
 }
 
 /* sticky header */
@@ -124,6 +160,49 @@ header.is-bg a {
 
 header.is-bg svg.icon path {
     stroke: #000;
+}
+
+/* dropdown menu */
+.site-nav__dropdown {
+    background: var(--dropdown-bg);
+    padding: 10px 0;
+    position: absolute;
+    min-width: 175px;
+    top: 28px;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.site-nav__dropdown li {
+    border-bottom: 1px solid var(--border);
+    display: block;
+}
+
+.site-nav__dropdown li:last-child {
+    border-bottom: none;
+}
+
+.site-nav__dropdown li a {
+    padding: 15px 20px;
+    display: block;
+    color: #161412;
+    font-weight: 500;
+}
+
+.site-nav__dropdown li a:hover {
+    background: var(--dropdown-menu-bg)
+}
+
+.has--dropdown:hover {
+    background: var(--dropdown-bg);
+}
+.has--dropdown:hover .has--dropdown  a.site-nav__link{
+    color:var(--menu-hover);
+}
+
+.has--dropdown:hover .site-nav__dropdown {
+    visibility: visible;
+    top: 100%;
 }
 
 
