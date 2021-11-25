@@ -2,7 +2,7 @@
     <div class="container">
         <div class="flex-wrap header-row d-flex justify-content-between align-items-center">
             <div class="header-item header-item--nav">
-                <ul class="flex-wrap site-nav d-flex">
+                <ul class="flex-wrap site-nav site-nav--left d-flex">
                     <li class="site-nav__item">
                         <a href="#" class="site-nav__link">BLACK FRIDAY SALE</a>
                     </li>
@@ -32,6 +32,11 @@
                         <a href="#" class="site-nav__link">ACCESSORIES</a>
                     </li>
                 </ul>
+                <div class="menu-btn">
+                    <button>
+                        {% include 'icon-menubtn' %}
+                    </button>
+                </div>
             </div>
             <div class="header-item header-item--logo">
                 <a href="#">
@@ -47,7 +52,7 @@
             </div>
             <div class="header-item header-item--icon">
                 <div class="flex-wrap site-nav d-flex justify-content-end">
-                    <a href="#" class="site-nav__link site-nav__link--size">
+                    <a href="#" class="site-nav__link site-nav__link--size user">
                         {% include 'icon-user' %}
                     </a>
                     <a href="#" class="site-nav__link site-nav__link--size">
@@ -61,8 +66,46 @@
         </div>
     </div>
 </header>
+<aside class="nav-drawer">
+    <div class="menu-close d-flex justify-content-end">
+        <button>
+            {% include 'icon-close' %}
+        </button>
+    </div>
+    <ul class="site-nav">
+        <li class="site-nav__item">
+            <a href="#" class="site-nav__link">BLACK FRIDAY SALE</a>
+        </li>
+        <li class="site-nav__item has--dropdown">
+            <a href="#" class="site-nav__link site-nav__link--dropbtn">
+                ANTI-THEFT BAGS
+            </a>
+            <ul class="site-nav__dropdown">
+                <li class="site-nav__item">
+                    <a href="#" class="site-nav__link">FLACK SACK II</a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="#" class="site-nav__link">FLACK SACK SPORT</a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="#" class="site-nav__link">CHINCH PACK</a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="#" class="site-nav__link">ANTITHEFT SACK 3L</a>
+                </li>
+            </ul>
+        </li>
+        <li class="site-nav__item">
+            <a href="#" class="site-nav__link">BIKE + MOTO LOCKS</a>
+        </li>
+        <li class="site-nav__item">
+            <a href="#" class="site-nav__link">ACCESSORIES</a>
+        </li>
+    </ul>
+</aside>
 
-<script>    
+<script>
+    // sticky header   
     const header = document.querySelector('#header');
     const stickyValue = `{{ section.settings.sticky_header }}`;
     window.onscroll = () => {
@@ -72,6 +115,17 @@
             header.classList.remove('header--sticky', 'is-bg');
         }
     }
+
+    // open mobile menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuCloseBtn = document.querySelector('.menu-close');
+    const namvDrawer = document.querySelector('.nav-drawer');
+    menuBtn.addEventListener('click', () => {
+        namvDrawer.style.left = '0';
+    });
+    menuCloseBtn.addEventListener('click', () => {
+        namvDrawer.style.left = '-80%';
+    });
 </script>
 
 
