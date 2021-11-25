@@ -171,6 +171,7 @@ header.is-bg svg.icon path {
     top: 28px;
     visibility: hidden;
     transition: all 0.3s;
+    z-index: 999;
 }
 
 .site-nav__dropdown li {
@@ -203,6 +204,10 @@ header.is-bg svg.icon path {
 .has--dropdown:hover .site-nav__dropdown {
     visibility: visible;
     top: 100%;
+}
+
+.has--dropdown:hover .site-nav__link--dropbtn {
+    color: var(--menu-hover);
 }
 
 
