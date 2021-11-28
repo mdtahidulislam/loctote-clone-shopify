@@ -6,11 +6,11 @@
                     <li class="site-nav__item">
                         <a href="#" class="site-nav__link">BLACK FRIDAY SALE</a>
                     </li>
-                    <li class="site-nav__item has-mobile--dropdown">
+                    <li class="site-nav__item has--dropdown">
                         <a href="#" class="site-nav__link site-nav__link--dropbtn">
                             ANTI-THEFT BAGS
                         </a>
-                        <ul class="site-nav-mobile__dropdown">
+                        <ul class="site-nav__dropdown">
                             <li class="site-nav__item">
                                 <a href="#" class="site-nav__link">FLACK SACK II</a>
                             </li>
@@ -34,7 +34,7 @@
                 </ul>
                 <div class="menu-btn">
                     <button>
-                        {% include 'icon-menubtn' %}
+                        {% render 'icon-menubtn' %}
                     </button>
                 </div>
             </div>
@@ -69,18 +69,18 @@
 <aside class="nav-drawer">
     <div class="menu-close d-flex justify-content-end">
         <button>
-            {% include 'icon-close' %}
+            {% render 'icon-close' %}
         </button>
     </div>
     <ul class="site-nav">
         <li class="site-nav__item">
             <a href="#" class="site-nav__link">BLACK FRIDAY SALE</a>
         </li>
-        <li class="site-nav__item has--dropdown">
+        <li class="site-nav__item has-mobile--dropdown">
             <a href="#" class="site-nav__link site-nav__link--dropbtn">
                 ANTI-THEFT BAGS
             </a>
-            <ul class="site-nav__dropdown">
+            <ul class="site-nav-mobile__dropdown">
                 <li class="site-nav__item">
                     <a href="#" class="site-nav__link">FLACK SACK II</a>
                 </li>
@@ -125,6 +125,23 @@
     });
     menuCloseBtn.addEventListener('click', () => {
         namvDrawer.style.left = '-80%';
+    });
+
+    // mobile dropdown
+    const dropDownBtn = document.querySelectorAll('.site-nav__link--dropbtn');
+    const mobileDropDown = document.querySelector('.site-nav-mobile__dropdown');
+    dropDownBtn.forEach(each => {
+        if (each.nextElementSibling !== null) {
+            each.addEventListener( 'click', (e)=>{
+                e.target.parentElement.classList.toggle('active');
+                let collapsibleSubMenu = each.nextElementSibling;
+                if (collapsibleSubMenu.style.maxHeight){
+                    collapsibleSubMenu.style.maxHeight = null;
+                } else {
+                    collapsibleSubMenu.style.maxHeight = collapsibleSubMenu.scrollHeight + "px";
+                }
+            })
+        }
     });
 </script>
 

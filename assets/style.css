@@ -210,6 +210,7 @@ header.is-bg svg.icon path {
     color: var(--menu-hover);
 }
 
+
 /* mobile menu */
 .menu-btn button {
     width: 35px;
@@ -252,6 +253,43 @@ header.is-bg svg.icon path {
 
 .site-nav__link:hover {
     color: var(--menu-hover);
+}
+
+/* mobile menu dropdown */
+.site-nav-mobile__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out 0s;
+    position: relative;
+}
+
+.has-mobile--dropdown::before {
+    content: '+';
+    position: absolute;
+    top: -2px;
+    right: 20px;
+    font-size: 29px;
+    color: var(--icon-hover);
+}
+
+.has-mobile--dropdown.active::before {
+    content: '-';
+}
+
+.has-mobile--dropdown.active  {
+    padding-left: 20px;
+}
+
+.has-mobile--dropdown.active .site-nav__link--dropbtn {
+    margin-left: -20px;
+}
+
+.has-mobile--dropdown.active .site-nav-mobile__dropdown li:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.has-mobile--dropdown.active .site-nav-mobile__dropdown li:last-child {
+    border-bottom: none;
 }
 
 /* VIDEO AREA CSS */
